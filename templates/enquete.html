@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Welkom op de website van De Hoge Dijk{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+ 
+         
+<body>
+    
+
+
+                <div class="container">
+                    <!-- Plaats hier je inhoud van de pagina -->
+                    <div class="box">
+                        <form action="/submit" method="post">
+                            <div class="test">
+                              
+                                <input type="number" name="age"  placeholder="leeftijd">
+                            </div>
+                           
+                            <div class="test">
+                               
+                                <input name="feedback"  placeholder="feedback">
+                            </div>
+                            
+                            <div class="test">
+                             
+                                <input name="vraag_1"  placeholder="vraag">
+                            </div>
+
+                            <div class="test">
+                             
+                                <input name="vraag_2"  placeholder="vraag">
+                            </div>
+
+                            <div class="test">
+                             
+                                <input name="vraag_3"  placeholder="vraag">
+                            </div>
+                           
+                            <a href="{{ url_for('enquete') }}">
+                            <button type="submit">SUBMIT</button>
+                            </a>
+                        </form> 
+            
+                    <!-- Voeg hier de code toe om de flash-meldingen weer te geven -->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}
+
+
