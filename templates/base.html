@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Hoge Dijk {% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}"/>
   </head>
@@ -10,10 +9,9 @@
   <body class="main">
     
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+  <a href="{{ url_for('home') }}" class="active">Home</a>
+  <a href="{{ url_for('enquete') }}" class="active">Enquête</a>
+ 
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa-solid fa-bars fa-bounce"></i>
   </a>
@@ -28,7 +26,10 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
 </script>
+<script src="https://kit.fontawesome.com/ff53f42187.js" crossorigin="anonymous"></script>
+
     <header>
       {% block header %}{% endblock %}
     </header>

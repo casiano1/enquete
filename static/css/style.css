@@ -1,5 +1,6 @@
 
 body {
+    background-color: #3b3b3b;
     background-image: url("/static/image/hoge_dijk.png") ;
     background-size: cover;
     background-repeat: no-repeat;
@@ -45,8 +46,8 @@ h1 {
 
 input {
     width: 550px;
-    height: 25px;
-    margin: 10px;
+    height: 18px;
+ 
     opacity: 0.6;
     color: rgb(0, 0, 0);
 }
@@ -55,9 +56,10 @@ input {
 .box {
     display: flex;
     color: white;
-    background-color: rgb(87 87 87);
+    background-color: rgb(20, 20, 20);
     width: 80%;
-    height: 50vh;
+    opacity: 0.5;
+    height: 140vh;
     justify-content: center;
 }
 
@@ -151,3 +153,10 @@ input {
     }
   }
   
+  @media screen and (max-width: 600px) {
+   p {
+    font-size: 15px;
+    font-weight: 900;
+   }
+
+  }

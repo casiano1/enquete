@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Welkom op de website van De Hoge Dijk{% endblock %}</h1>
+  <h1>{% block title %}Welkom op de enquête site{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
@@ -16,32 +16,38 @@
                     <div class="box">
                         <form action="/submit" method="post">
                             <div class="test">
-                              
-                                <input type="number" name="age"  placeholder="leeftijd">
+                                <p>Wat is uw leeftijd?</p>
+                                <input type="number" name="age"  placeholder="Type hier u leeftijd">
                             </div>
-                           
                             <div class="test">
-                               
-                                <input name="feedback"  placeholder="feedback">
+                                <p>Welke behoeftes in een restaurant verwacht u?</p>
+                                <input name="vraag_1"  placeholder="Type hier uw antwoord">
                             </div>
-                            
                             <div class="test">
-                             
-                                <input name="vraag_1"  placeholder="vraag">
+                                <p>Wat vindt u belangrijk als het gaat om de kwaliteit van het eten? </p>
+                                <input name="vraag_2"  placeholder="Type hier uw antwoord">
+                            </div>
+                            <div class="test">
+                                <p> <div class="test">
+                                    <p>Welke aspecten van een restaurant vindt u het belangrijkst?</p>
+                                    <input name="vraag_3"  placeholder="Type hier uw antwoord"> 
+                            </div>
+                            <div class="test">
+                                <p>Welke kenmerken (als ze goed worden uitgevoerd) zouden uw algehele tevredenheid vergroten en uw eetervaring verbeteren?</p>
+                                <input name="vraag_4"  placeholder="Type hier uw antwoord">
                             </div>
 
                             <div class="test">
-                             
-                                <input name="vraag_2"  placeholder="vraag">
+                                <p>Zijn er in uw oogpunt extra’s of onverwachte details die uw restaurantbezoek buitengewoon speciaal zouden maken?</p>
+                                <input name="vraag_5"  placeholder="Type hier uw antwoord">
+                            </div>
+                            <div class="test">
+                                <p>Bent u tevreden over de portiegrootte van u gerecht?</p>
+                                <input name="vraag_6"  placeholder="Type hier uw antwoord">
                             </div>
 
-                            <div class="test">
-                             
-                                <input name="vraag_3"  placeholder="vraag">
-                            </div>
-                           
                             <a href="{{ url_for('enquete') }}">
-                            <button type="submit">SUBMIT</button>
+                            <button type="submit">Verzenden</button>
                             </a>
                         </form> 
             

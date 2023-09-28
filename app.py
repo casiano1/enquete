@@ -14,10 +14,14 @@ db = SQLAlchemy(app)
 class Enquete(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         age = db.Column(db.String(100), nullable=False)
-        feedback = db.Column(db.Text, nullable=False)
         vraag_1 = db.Column(db.Text, nullable=False)
         vraag_2 = db.Column(db.Text, nullable=False)
         vraag_3 = db.Column(db.Text, nullable=False)
+        vraag_4 = db.Column(db.Text, nullable=False)
+        vraag_5 = db.Column(db.Text, nullable=False)
+        vraag_6 = db.Column(db.Text, nullable=False)
+  
+        
 
         def __repr__(self):
             return f'Response {self.name}'
@@ -26,17 +30,21 @@ class Enquete(db.Model):
 @app.route("/submit", methods=["POST"])
 def submit():
         age = request.form['age']
-        feedback = request.form['feedback']
         vraag_1 = request.form['vraag_1']
         vraag_2 = request.form['vraag_2']
         vraag_3 = request.form['vraag_3']
+        vraag_4 = request.form['vraag_4']
+        vraag_5 = request.form['vraag_5']
+        vraag_6 = request.form['vraag_6']
+    
+        
 
-        enquete = Enquete(age=age, feedback=feedback, vraag_1=vraag_1, vraag_2=vraag_2, vraag_3=vraag_3)
+        enquete = Enquete(age=age, vraag_1=vraag_1, vraag_2=vraag_2, vraag_3=vraag_3, vraag_4=vraag_4, vraag_5=vraag_5, vraag_6=vraag_6)
 
         db.session.add(enquete)
         db.session.commit()
 
-        flash('Bedankt voor u medewerking')
+        flash('Bedankt voor uw medewerking')
 
         return redirect(url_for('enquete')) 
 
